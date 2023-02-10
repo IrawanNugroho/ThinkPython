@@ -106,28 +106,28 @@ def append(res, typestr, count):
 if __name__ == '__main__':
 
     t = [1,2,3]
-    print structshape(t)
+    print(structshape(t))
 
     t2 = [[1,2], [3,4], [5,6]]
-    print structshape(t2)
+    print(structshape(t2))
 
     t3 = [1, 2, 3, 4.0, '5', '6', [7], [8], 9]
-    print structshape(t3)
+    print(structshape(t3))
 
     class Point:
         """trivial object type"""
 
     t4 = [Point(), Point()]
-    print structshape(t4)
+    print(structshape(t4))
 
     s = set('abc')
-    print structshape(s)
+    print(structshape(s))
 
     lt = zip(t, s)
-    print structshape(lt)
+    print(structshape(lt))
 
     d = dict(lt)        
-    print structshape(d)
+    print(structshape(d))
 
     it = iter('abc')
-    print structshape(it)
+    print(structshape(it))

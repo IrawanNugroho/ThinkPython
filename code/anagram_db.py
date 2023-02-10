@@ -21,7 +21,7 @@ def store_anagrams(filename, ad):
     """
     shelf = shelve.open(filename, 'c')
 
-    for word, word_list in ad.iteritems():
+    for word, word_list in ad.items():
         shelf[word] =  word_list
 
     shelf.close()
@@ -46,7 +46,7 @@ def main(name, command='store'):
         ad = all_anagrams('words.txt')
         store_anagrams('anagrams.db', ad)
     else:
-        print read_anagrams('anagrams.db', command)
+        print(read_anagrams('anagrams.db', command))
 
 
 

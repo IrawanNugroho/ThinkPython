@@ -43,7 +43,7 @@ if __name__ == '__main__':
         hand = PokerHand()
         deck.move_cards(hand, 7)
         hand.sort()
-        print hand
-        print hand.has_flush()
-        print ''
+        print(hand)
+        print(hand.has_flush())
+        print('')
 

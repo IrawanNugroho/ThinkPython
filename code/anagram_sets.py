@@ -44,7 +44,7 @@ def print_anagram_sets(d):
     """
     for v in d.values():
         if len(v) > 1:
-            print len(v), v
+            print(len(v), v)
 
 
 def print_anagram_sets_in_order(d):
@@ -64,7 +64,7 @@ def print_anagram_sets_in_order(d):
 
     # print the sorted list
     for x in t:
-        print x
+        print(x)
 
 
 def filter_length(d, n):
@@ -76,7 +76,7 @@ def filter_length(d, n):
     Returns: new map from word to list of anagrams
     """
     res = {}
-    for word, anagrams in d.iteritems():
+    for word, anagrams in d.items():
         if len(word) == n:
             res[word] = anagrams
     return res

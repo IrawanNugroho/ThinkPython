@@ -85,7 +85,7 @@ def random_text(n=100):
 
         # choose a random suffix
         word = random.choice(suffixes)
-        print word,
+        print(word,)
         start = shift(start, word)
 
 
@@ -105,7 +105,7 @@ def main(name, filename='', n=100, order=2, *args):
         n = int(n)
         order = int(order)
     except:
-        print 'Usage: randomtext.py filename [# of words] [prefix length]'
+        print('Usage: randomtext.py filename [# of words] [prefix length]')
     else: 
         process_file(filename, order)
         random_text(n)

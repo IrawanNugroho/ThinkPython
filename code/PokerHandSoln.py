@@ -50,6 +50,8 @@ class PokerHand(Hand):
             self.ranks.count(c.rank)
 
         self.sets = self.ranks.values()
+        # print(type(self.sets))
+        # What are the solution doing ? AttributeError: 'set' object has no attribute 'sort' 
         self.sets.sort(reverse=True)
  
     def has_highcard(self):
@@ -91,7 +93,7 @@ class PokerHand(Hand):
         for val in self.suits.values():
             if val >= 5:
                 return True
-	return False
+        return False
 
     def has_straight(self):
         """Checks whether this hand has a straight."""
@@ -199,7 +201,7 @@ def main(*args):
     n = 10000
     for i in range(n):
         if i%1000 == 0:
-            print i
+            print(i)
             
         deck = PokerDeck()
         deck.shuffle()
@@ -211,14 +213,14 @@ def main(*args):
             
     # print the results
     total = 7.0 * n
-    print total, 'hands dealt:'
+    print(total, 'hands dealt:')
 
     for label in PokerHand.all_labels:
         freq = lhist.get(label, 0)
         if freq == 0: 
             continue
         p = total / freq
-        print '%s happens one time in %.2f' % (label, p)
+        print('%s happens one time in %.2f' % (label, p))
 
         
 if __name__ == '__main__':

@@ -31,16 +31,27 @@ class Card(object):
         return '%s of %s' % (Card.rank_names[self.rank],
                              Card.suit_names[self.suit])
 
-    def __cmp__(self, other):
-        """Compares this card to other, first by suit, then rank.
+    # def __cmp__(self, other):
+    #     """Compares this card to other, first by suit, then rank.
 
-        Returns a positive number if this > other; negative if other > this;
-        and 0 if they are equivalent.
+    #     Returns a positive number if this > other; negative if other > this;
+    #     and 0 if they are equivalent.
+    #     """
+    #     t1 = self.suit, self.rank
+    #     t2 = other.suit, other.rank
+    #     return cmp(t1, t2)
+
+    def __lt__(self, other):
         """
-        t1 = self.suit, self.rank
-        t2 = other.suit, other.rank
-        return cmp(t1, t2)
-
+        return True if self < other
+        I use parentheses to make it clearer that it is a tuple
+        cmp is not supported in python 3
+        """
+                
+        t1 = (self.suit, self.rank)
+        t2 = (other.suit, other.rank)
+        
+        return t1 < t2
 
 class Deck(object):
     """Represents a deck of cards.
@@ -120,10 +131,10 @@ def find_defining_class(obj, method_name):
 if __name__ == '__main__':
     deck = Deck()
     deck.shuffle()
-
+    
     hand = Hand()
-    print find_defining_class(hand, 'shuffle')
+    print(find_defining_class(hand, 'shuffle'))
 
     deck.move_cards(hand, 5)
     hand.sort()
-    print hand
+    print(hand)

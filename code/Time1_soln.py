@@ -63,20 +63,20 @@ def double_day(b1, b2):
 def datetime_exercises():
     # print today's day of the week
     today = datetime.today()
-    print today.weekday()
-    print today.strftime('%A')
+    print(today.weekday())
+    print(today.strftime('%A'))
 
     # compute the number of days until the next birthday
     # (note that it usually gets rounded down)
     birthday = datetime(1967, 5, 2)
-    print 'Days until birthday',
-    print days_until_birthday(birthday)
+    print('Days until birthday',)
+    print(days_until_birthday(birthday))
 
     # compute the day one person is twice as old as another
     b1 = datetime(2006, 12, 26)
     b2 = datetime(2003, 10, 11)
-    print 'Double Day',
-    print double_day(b1, b2)
+    print('Double Day',)
+    print(double_day(b1, b2))
 
 
 def main():
@@ -86,24 +86,24 @@ def main():
     noon_time.minute = 0
     noon_time.second = 0
 
-    print 'Starts at',
+    print('Starts at',)
     print_time(noon_time)
 
     # and the run time of the movie is 109 minutes...
     movie_minutes = 109
     run_time = int_to_time(movie_minutes * 60)
-    print 'Run time',
+    print('Run time',)
     print_time(run_time)
 
     # what time does the movie end?
     end_time = add_times(noon_time, run_time)
-    print 'Ends at',
+    print('Ends at',)
     print_time(end_time)
 
-    print 'Does it end after it begins?',
-    print is_after(end_time, noon_time)
+    print('Does it end after it begins?',)
+    print(is_after(end_time, noon_time))
 
-    print 'Home by',
+    print('Home by',)
     travel_time = 600      # 10 minutes
     home_time = increment(end_time, travel_time)
     print_time(home_time)
@@ -111,15 +111,16 @@ def main():
     race_time = Time()
     race_time.hour = 1
     race_time.minute = 34
-    race_time.second = 05
+    #race_time.second = 05
+    race_time.second = 5
 
-    print 'Half marathon time',
+    print('Half marathon time',)
     print_time(race_time)
 
     distance = 13.1       # miles
     pace = mul_time(race_time, 1/distance)
 
-    print 'Time per mile',
+    print('Time per mile',)
     print_time(pace)
 
     datetime_exercises()

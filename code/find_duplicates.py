@@ -30,7 +30,7 @@ def compute_checksum(filename):
 
     filename: string
     """
-    cmd = 'md5sum ' + filename
+    cmd = 'md5 -r ' + filename
     return pipe(cmd)
 
 
@@ -103,14 +103,14 @@ def print_duplicates(d):
 
     d: map from checksum to list of files with that checksum
     """
-    for key, names in d.iteritems():
+    for key, names in d.items():
         if len(names) > 1:
-            print 'The following files have the same checksum:'
+            print('The following files have the same checksum:')
             for name in names:
-                print name
+                print(name)
 
             if check_pairs(names):
-                print 'And they are identical.'
+                print('And they are identical.')
 
 
 if __name__ == '__main__':
